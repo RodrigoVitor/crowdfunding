@@ -1,9 +1,11 @@
 <template>
     <div>
         <nav>
-            <img src="../assets/icon-hamburger.svg" alt="icon-hamburger" id="open-menu">
-            <img src="../assets/icon-close-menu.svg" alt="close-menu" id="close-menu">
-            <ul>
+            <img src="../assets/icon-hamburger.svg" alt="icon-hamburger" :class="[isClosed ? 'open-menu' : 'closed-menu']" @click="OpenClosedMenu">
+
+            <img src="../assets/icon-close-menu.svg" alt="close-menu" :class="[isOpen ? 'open-menu' : 'closed-menu']" @click="OpenClosedMenu">
+            
+            <ul :class="[isOpen ? 'open-menu' : 'closed-menu']">
                 <li><a href="#">About</a></li>
                  <li><a href="#">Discover</a></li>
                  <li><a href="#">Get started</a></li>
@@ -11,6 +13,23 @@
         </nav>
     </div>
 </template>
+
+<script>
+export default {
+    data: function() {
+        return {
+            isOpen: false,
+            isClosed: true
+        }
+    },
+    methods: {
+        OpenClosedMenu() {
+            this.isOpen = !this.isOpen
+            this.isClosed = !this.isClosed
+        }
+    }
+}
+</script>
 
 <style scoped>
 /* reset */
@@ -26,7 +45,9 @@ div {
 nav img {
     cursor: pointer;
 }
-#close-menu {visibility: hidden;}
+/* Menu */
+.closed-menu {visibility: hidden;}
+.open-menu {visibility: visible;}
 
 /* Largura minima */
 @media screen and (min-width: 720px) {
@@ -34,7 +55,6 @@ nav img {
 }
 /* Tablet */
 @media screen and (max-width: 720px) {
-    nav ul {display:none}
     nav ul {
         background:white;
         width:500px;
