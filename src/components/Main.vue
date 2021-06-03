@@ -19,6 +19,11 @@ import Menu from '../components/Menu'
 export default {
     components: {
         Menu
+    },
+    computed: {
+        valor: function() {
+            return this.$store.state.valor
+        }
     }
 }
 </script>
@@ -53,9 +58,11 @@ nav ul li {
     nav ul {
         display:none
     }
-    nav h2 {margin-left:55px;font-size: 2rem;}
+    nav h2 {margin-left:55px;font-size: 2rem; margin-top:70px}
 }
 @media screen and (max-width: 375px) {
-    nav {display:none}
+    nav h2{
+        font-size: 1.2rem;
+    }
 }
 </style>
