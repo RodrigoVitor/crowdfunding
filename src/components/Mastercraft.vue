@@ -7,12 +7,23 @@
             <div>
                 <button>Back this project</button>
                 <img src="../assets/icon-bookmark.svg" alt="bookmark">
-                <button><img src="../assets/icon-bookmark.svg" alt="bookmark">Bookmark</button>
+                <button><img src="../assets/icon-bookmark.svg" alt="bookmark">{{mark}}</button>
+
             </div>
         </div>
     </div>
 </template>
 
+<script>
+export default {
+    data: function () {
+        return {
+            img: "logo-mastercraft",
+            mark: "Bookmark"
+        }
+    }
+}
+</script>
 
 <style scoped>
 #mastercraft {
