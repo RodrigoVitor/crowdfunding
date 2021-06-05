@@ -49,6 +49,9 @@ nav ul li {
     display:inline-block;
     margin-left:15px
 }
+nav ul li a:hover {
+    text-decoration:underline;
+}
 
 @media screen and (max-width: 720px) {
     nav {
