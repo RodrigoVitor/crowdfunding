@@ -7,8 +7,7 @@
             <div>
                 <button>Back this project</button>
                 <img src="../assets/icon-bookmark.svg" alt="bookmark">
-                <button><img src="../assets/icon-bookmark.svg" alt="bookmark">{{mark}}</button>
-
+                <button @click="marked"><img src="../assets/icon-bookmark.svg" alt="bookmark">{{mark}}</button>
             </div>
         </div>
     </div>
@@ -18,9 +17,14 @@
 export default {
     data: function () {
         return {
-            img: "logo-mastercraft",
-            mark: "Bookmark"
+            mark: "Bookmark",
+            image: '../assets/icon-bookmark.svg'
         }
+    },
+    methods: {
+        marked() {
+            this.mark = "Bookmarked"
+        },
     }
 }
 </script>
