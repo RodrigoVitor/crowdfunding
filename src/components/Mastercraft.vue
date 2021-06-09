@@ -6,8 +6,10 @@
             <p>A beautiful and handcrafted monitor stand to reduce neck and eye strain</p>
             <div>
                 <button>Back this project</button>
-                <img src="../assets/icon-bookmark.svg" alt="bookmark">
-                <button @click="marked"><img src="../assets/icon-bookmark.svg" alt="bookmark">{{mark}}</button>
+                <img src="../assets/icon-bookmark.svg" alt="bookmark"  v-if="showMark" @click="showMarkedEMark">
+                <img src="../assets/icon-bookmarked.png" alt="bookmarked" v-else @click="showMarkedEMark">
+                <button  v-if="showMark" id="mark" @click="showMarkedEMark"><img src="../assets/icon-bookmark.svg" alt="bookmark">Bookmark</button>
+                <button  v-else id="marked" @click="showMarkedEMark"><img src="../assets/icon-bookmarked.png" alt="bookmark">Bookmarked</button>
             </div>
         </div>
     </div>
@@ -17,17 +19,17 @@
 export default {
     data: function () {
         return {
-            mark: "Bookmark",
-            image: '../assets/icon-bookmark.svg'
+            showMark: true
         }
     },
     methods: {
-        marked() {
-            this.mark = "Bookmarked"
-        },
+        showMarkedEMark() {
+            this.showMark = !this.showMark
+        }
     }
 }
 </script>
+
 
 <style scoped>
 #mastercraft {
@@ -60,6 +62,11 @@ export default {
     background-color:hsl(176, 72%, 28%);
     color:white;
 }
+#marked{
+        color:hsl(176, 72%, 28%);
+        font-weight:bold
+}
+
 #mastercraft div > img {visibility: hidden}
 
 #mastercraft div > button {
@@ -79,7 +86,7 @@ export default {
 }
 
 @media screen and (max-width:375px) {
-    #mastercraft div > img {visibility: visible}
+    #mastercraft div > img {visibility: visible; cursor:pointer}
     #mastercraft div > button:last-child {display:none}
 }
 
