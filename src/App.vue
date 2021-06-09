@@ -2,17 +2,21 @@
   <div id="app">
     <Main />
     <Mastercraft />
+    <Number />
   </div>
 </template>
 
 <script>
 import Main from './components/Main'
 import Mastercraft from './components/Mastercraft.vue'
+import Number from './components/Number.vue'
+
 export default {
   name: 'App',
   components: {
     Main,
-    Mastercraft
+    Mastercraft,
+    Number
   }
 }
 </script>
