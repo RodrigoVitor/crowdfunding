@@ -3,6 +3,7 @@
     <Main />
     <Mastercraft />
     <Number />
+    <About />
   </div>
 </template>
 
@@ -10,13 +11,16 @@
 import Main from './components/Main'
 import Mastercraft from './components/Mastercraft.vue'
 import Number from './components/Number.vue'
+import About from './components/About.vue'
+
 
 export default {
   name: 'App',
   components: {
     Main,
     Mastercraft,
-    Number
+    Number,
+    About
   }
 }
 </script>
