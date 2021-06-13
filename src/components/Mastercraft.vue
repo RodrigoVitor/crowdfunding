@@ -59,8 +59,11 @@ export default {
 }
 #mastercraft div > button:first-child {
     padding-left:30px;
-    background-color:hsl(176, 72%, 28%);
+    background-color:hsl(176, 50%, 47%);
     color:white;
+}
+#mastercraft div > button:first-child:hover {
+    background:hsl(176, 72%, 28%)
 }
 #marked{
         color:hsl(176, 72%, 28%);

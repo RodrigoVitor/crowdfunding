@@ -28,7 +28,7 @@
                 <p>You get two Special Edition Mahogany stands, o Backer T-shirt, and a personal thank you, You-ll be added to our Backer member list. Shipping is included.</p>
                 <div class="main">
                     <h1>0 <small>left</small></h1>
-                    <button>Select Reward</button>
+                    <button>Out of stack</button>
                 </div>
             </div>
         </div>
@@ -104,6 +104,9 @@
     border:none;
     border-radius:25px;
     cursor:pointer;
+}
+.component-bamboo button:hover, .component-blackEdition button:hover {
+    background:hsl(176, 72%, 28%)
 }
 /* Smartphones */
 @media screen and (max-width:640px) {
